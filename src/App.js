@@ -1,13 +1,16 @@
 import './App.css';
-import Nav from "./components/Nav";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Content from "components/Content";
+import NotFound from "components/NotFound";
 
 function App() {
   return (
-      <Nav>
-        <img
-          alt={'test'}
-        />
-      </Nav>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<Content />}></Route>
+              <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+      </BrowserRouter>
   );
 }
 
